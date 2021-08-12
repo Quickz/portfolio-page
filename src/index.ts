@@ -1,5 +1,3 @@
-import "./style.css";
-
 const projectEntryTemplate : HTMLTemplateElement = document.getElementById("project-entry-template") as HTMLTemplateElement;
 const projectContainer : HTMLTemplateElement = document.getElementById("project-container") as HTMLTemplateElement;
 
