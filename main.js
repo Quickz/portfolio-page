@@ -2,8 +2,8 @@
 
 (function()
 {
-    const originalEntry = document.getElementById("original-entry");
-    const projectContainerRow = document.getElementById("project-container-row");
+    const projectEntryTemplate = document.getElementById("project-entry-template");
+    const projectContainer = document.getElementById("project-container");
 
     const projects = [
         {
@@ -55,7 +55,9 @@
             title: "FreeCodeCamp Projects",
             thumbnail: "thumbnails/freecodecamp-projects-thumbnail.png",
             url: "https://codepen.io/Quickz/full/AXkjJp/"
-        }
+        },
+        null,
+        null
     ];
 
     fillProjectContainer();
@@ -65,13 +67,19 @@
     {
         for (let i = 0; i < projects.length; i++)
         {
-            const column = createColumn();
             const entry = createEntry();
+            const projectIsEmpty = !projects[i];
+            if (projectIsEmpty)
+            {
+                entry.style.visibility = "hidden";
+                entry.style.height = "0px";
+            }
+            else
+            {
+                fillEntry(entry, projects[i]);
+            }
 
-            fillEntry(entry, projects[i]);
-
-            column.appendChild(entry);
-            projectContainerRow.appendChild(column);
+            projectContainer.appendChild(entry);
         }
     }
 
@@ -101,17 +109,10 @@
 
     function createEntry()
     {
-        const newEntry = originalEntry.cloneNode(deep = true);
-        newEntry.hidden = false;
-        return newEntry;
-    }
-
-    function createColumn()
-    {
-        const column = document.createElement("div");
-        column.classList.add("col");
-
-        return column;
+        return projectEntryTemplate
+            .content
+            .cloneNode(deep = true)
+            .firstElementChild;
     }
 
 })();
