@@ -25,9 +25,11 @@ module.exports =
         filename: "bundle.js",
         path: path.resolve(__dirname, "public")
     },
-    devServer: {
+    devServer:
+    {
         publicPath: "/",
         contentBase: "./public",
+        watchContentBase: true,
         hot: true
     },
     mode: "development"
