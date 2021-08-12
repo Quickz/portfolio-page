@@ -9,9 +9,13 @@ module.exports =
         rules:
         [
             {
-                test: /\.ts$/,
+                test: /\.ts$/i,
                 use: "ts-loader",
                 include: [ path.resolve(__dirname, "src") ]
+            },
+            {
+                test: /\.css$/i,
+                use: ["style-loader", "css-loader"]
             }
         ]
     },
