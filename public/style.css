@@ -27,8 +27,8 @@
     margin: 0px;
 }
 
-.project-entry:hover {
-    opacity: 0.75;
+.project-entry img:hover {
+    filter: brightness(50%);
 }
 
 .project-entry .thumbnail {
