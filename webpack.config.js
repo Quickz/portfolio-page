@@ -43,7 +43,22 @@ module.exports =
         {
             patterns:
             [
-                { from: "src/thumbnails", to: "thumbnails" }
+                {
+                    from: "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
+                    to: "libraries/fontawesome/css/all.min.css"
+                },
+                {
+                    from: "node_modules/@fortawesome/fontawesome-free/css/v4-shims.min.css",
+                    to: "libraries/fontawesome/css/v4-shims.min.css"
+                },
+                {
+                    from: "node_modules/@fortawesome/fontawesome-free/webfonts",
+                    to: "libraries/fontawesome/webfonts"
+                },
+                {
+                    from: "src/thumbnails",
+                    to: "thumbnails"
+                }
             ]
         }),
     ],
