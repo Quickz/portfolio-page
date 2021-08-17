@@ -1,4 +1,5 @@
 const path = require("path");
+const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports =
 {
@@ -36,5 +37,15 @@ module.exports =
         watchContentBase: true,
         hot: true
     },
+    plugins:
+    [
+        new CopyPlugin(
+        {
+            patterns:
+            [
+                { from: "src/thumbnails", to: "thumbnails" }
+            ]
+        }),
+    ],
     mode: "development"
 };
