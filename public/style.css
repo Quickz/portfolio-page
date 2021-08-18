@@ -15,7 +15,9 @@
 }
 
 #intro-container {
-    width: 960px;
+    display: flex;
+    justify-content: center;
+    max-width: 960px;
     height: 300px;
     margin: 10px auto;
     padding-top: 120px;
