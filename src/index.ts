@@ -1,5 +1,6 @@
 const projectEntryTemplate : HTMLTemplateElement = document.getElementById("project-entry-template") as HTMLTemplateElement;
 const projectContainer : HTMLTemplateElement = document.getElementById("project-container") as HTMLTemplateElement;
+const introSubtitle : HTMLParagraphElement = document.getElementById("intro-container")?.getElementsByTagName("p")[0] as HTMLParagraphElement;
 
 const emptyProject : ProjectEntryData =
 {
@@ -68,6 +69,7 @@ const projects : ProjectEntryData[] = [
 ];
 
 fillProjectContainer();
+startChangingSubtitle();
 
 
 function fillProjectContainer()
@@ -119,6 +121,33 @@ function createEntry() : HTMLAnchorElement
     let newNode : any = projectEntryTemplate.content.cloneNode(true);
     return newNode.firstElementChild;
 }
+
+async function setSubtitle(text : string, speed : number)
+{
+    for (let i = 1; i <= text.length; i++)
+    {
+        introSubtitle.textContent = text.substr(0, i) + "_";
+        await sleep(speed);
+    }
+}
+ 
+function sleep(ms : number)
+{
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+ 
+ async function startChangingSubtitle()
+ {
+    const delay = 35;
+
+     while (true)
+     {
+         await setSubtitle("I'm a Software Developer", delay);
+         await sleep(7000);
+         await setSubtitle("I specialize in C# and .NET", delay);
+         await sleep(7000);
+     }
+ }
 
 interface ProjectEntryData
 {
