@@ -17,17 +17,27 @@
 #intro-container {
     display: flex;
     justify-content: center;
+    flex-direction: column;
+
     max-width: 960px;
     height: 300px;
     margin: 10px auto;
-    padding-top: 120px;
+}
+
+#intro-container div {
+    margin: auto;
 }
 
 #intro-container h1 {
-    color: #f1f1f1;
+    color: #fff;
     text-shadow: 0px 0px 4px #111;
     font-size: 50px;
-    text-align: center;
+}
+
+#intro-container p {
+    color: #fff;
+    text-shadow: 0px 0px 4px #111;
+    font-size: 25px;
 }
 
 #project-container {
