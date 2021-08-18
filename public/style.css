@@ -6,11 +6,26 @@
 }
 
 #background-video {
+    z-index: -1;
     position: fixed;
     right: 0;
     bottom: 0;
     min-width: 100%;
     min-height: 100%;
+}
+
+#intro-container {
+    width: 960px;
+    height: 300px;
+    margin: 10px auto;
+    padding-top: 120px;
+}
+
+#intro-container h1 {
+    color: #f1f1f1;
+    text-shadow: 0px 0px 4px #111;
+    font-size: 50px;
+    text-align: center;
 }
 
 #project-container {
