@@ -40,9 +40,9 @@ const projects : ProjectEntryData[] = [
         url: "https://quickz.github.io/Tetris/"
     },
     {
-        title: "Path Finding Visual",
-        thumbnail: "thumbnails/path-finding-visual-thumbnail.png",
-        url: "https://quickz.github.io/PathFinding-Visual/"
+        title: "FreeCodeCamp Legacy Front End certificate",
+        thumbnail: "thumbnails/freecodecamp-thumbnail.png",
+        url: "https://www.freecodecamp.org/certification/quickz/legacy-front-end"
     },
     {
         title: "Memory Card Game",
@@ -55,11 +55,15 @@ const projects : ProjectEntryData[] = [
         url: "https://github.com/Quickz/swf-game-file-extractor"
     },
     {
-        title: "FreeCodeCamp Projects",
-        thumbnail: "thumbnails/freecodecamp-projects-thumbnail.png",
-        url: "https://codepen.io/Quickz/full/AXkjJp/"
+        title: "Path Finding Visual",
+        thumbnail: "thumbnails/path-finding-visual-thumbnail.png",
+        url: "https://quickz.github.io/PathFinding-Visual/"
     },
-    emptyProject,
+    {
+        title: "Visual Studio video series",
+        thumbnail: "thumbnails/visual-studio-tips-thumbnail.png",
+        url: "https://www.youtube.com/watch?v=EmLgSxfhoxI&list=PLz-QWJhJz3MHYx0oO-9Qmyw-EGGRK_Cw6&ab_channel=Quickz"
+    },
     emptyProject
 ];
 
