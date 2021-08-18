@@ -26,6 +26,7 @@
 
 #intro-container div {
     margin: auto;
+    padding: 0 20px;
 }
 
 #intro-container h1 {
@@ -38,6 +39,16 @@
     color: #fff;
     text-shadow: 0px 0px 4px #111;
     font-size: 25px;
+}
+
+@media only screen and (max-width: 700px) {
+    #intro-container h1 { font-size: 40px; }
+    #intro-container p { font-size: 20px; }
+}
+
+@media only screen and (max-width: 550px) {
+    #intro-container h1 { font-size: 35px; }
+    #intro-container p { font-size: 17px; }
 }
 
 #project-container {
