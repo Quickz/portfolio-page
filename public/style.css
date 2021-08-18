@@ -107,6 +107,7 @@
     justify-content: center;
     max-width: 960px;
     margin: auto;
+    background: white;
 }
 
 #social-container > * {
