@@ -1,6 +1,11 @@
+// ------------------------
+// --- Global constants ---
+// ------------------------
+
 const projectEntryTemplate : HTMLTemplateElement = document.getElementById("project-entry-template") as HTMLTemplateElement;
 const projectContainer : HTMLTemplateElement = document.getElementById("project-container") as HTMLTemplateElement;
 const introSubtitle : HTMLParagraphElement = document.getElementById("intro-container")?.getElementsByTagName("p")[0] as HTMLParagraphElement;
+const backgroundVideo: HTMLVideoElement = document.getElementById("background-video") as HTMLVideoElement;
 
 const emptyProject : ProjectEntryData =
 {
@@ -68,9 +73,65 @@ const projects : ProjectEntryData[] = [
     emptyProject
 ];
 
+
+// ------------------------
+// -------- Global --------
+// ------------------------
+
+backgroundVideo.style.filter = "opacity(0%)";
+
+let backgroundVideoStarted= false;
+
+backgroundVideo.oncanplaythrough = function()
+{
+    if (backgroundVideoStarted)
+        return;
+
+    backgroundVideoStarted = true;
+    fadeIn(backgroundVideo, 500);
+};
+
 fillProjectContainer();
 startChangingSubtitle();
 
+
+// -------------------------
+// -------- Methods --------
+// -------------------------
+
+function fadeIn(
+    element : HTMLElement,
+    durationInMiliseconds : number) : Promise<unknown>
+{
+    const framesPerSecond = 50;
+    const frames = durationInMiliseconds / 1000 * framesPerSecond;
+    const singleFrameDuration = durationInMiliseconds / frames;
+    const opacityPerFrame = 1 / frames;
+
+    // Node:
+    // Using filter opacity instead of opacity
+    // due to a weird issue where the last assignment
+    // which set opacity to 1 caused a weird blink
+
+    return new Promise(async resolve =>
+    {
+        let opacity = 0;
+        backgroundVideo.style.filter = "opacity(0%)";
+
+        while (opacity < 1 - opacityPerFrame)
+        {
+            opacity += opacityPerFrame;
+            backgroundVideo.style.filter = `opacity(${opacity * 100}%)`;
+
+            await sleep(singleFrameDuration);
+        }
+
+        opacity = 1;
+        backgroundVideo.style.filter = `opacity(100%)`;
+
+        resolve(null);
+    });
+}
 
 function fillProjectContainer()
 {
