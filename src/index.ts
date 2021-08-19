@@ -133,7 +133,17 @@ function fadeIn(
     });
 }
 
-function fillProjectContainer()
+function growIn(element : HTMLElement)
+{
+    element.classList.add("play-grow-in");
+
+    element.addEventListener("animationend", () =>
+    {
+        element.classList.remove("play-grow-in");
+    });
+}
+
+async function fillProjectContainer()
 {
     for (let i = 0; i < projects.length; i++)
     {
@@ -150,6 +160,12 @@ function fillProjectContainer()
         }
 
         projectContainer.appendChild(entry);
+    }
+
+    for (let i = 0; i < projectContainer.children.length; i++)
+    {
+        growIn(projectContainer.children[i] as HTMLElement);
+        await sleep(1);
     }
 }
 
