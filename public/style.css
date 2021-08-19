@@ -5,6 +5,10 @@
     margin: 0px;
 }
 
+body {
+    background: black;
+}
+
 #background-video {
     z-index: -1;
     position: fixed;
