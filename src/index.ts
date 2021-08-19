@@ -116,18 +116,18 @@ function fadeIn(
     return new Promise(async resolve =>
     {
         let opacity = 0;
-        backgroundVideo.style.filter = "opacity(0%)";
+        element.style.filter = "opacity(0%)";
 
         while (opacity < 1 - opacityPerFrame)
         {
             opacity += opacityPerFrame;
-            backgroundVideo.style.filter = `opacity(${opacity * 100}%)`;
+            element.style.filter = `opacity(${opacity * 100}%)`;
 
             await sleep(singleFrameDuration);
         }
 
         opacity = 1;
-        backgroundVideo.style.filter = `opacity(100%)`;
+        element.style.filter = `opacity(100%)`;
 
         resolve(null);
     });
