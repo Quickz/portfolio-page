@@ -153,23 +153,22 @@ async function fillProjectContainer()
 
         if (projects[i] == emptyProject)
         {
-            entry.style.visibility = "hidden";
             entry.style.height = "0px";
         }
         else
         {
             fillEntry(entry, projects[i]);
+
+            const entryThumbnail = entry.getElementsByClassName("thumbnail")[0] as HTMLImageElement;
+            entryThumbnail.onload = async function()
+            {
+                entryThumbnail.onload = null;
+
+                await projectEntryIntroAnimationWaiter.next();
+                entry.style.visibility = "visible";
+                growIn(entry);
+            };
         }
-
-        const entryThumbnail = entry.getElementsByClassName("thumbnail")[0] as HTMLImageElement;
-        entryThumbnail.onload = async function()
-        {
-            entryThumbnail.onload = null;
-
-            await projectEntryIntroAnimationWaiter.next();
-            entry.style.visibility = "visible";
-            growIn(entry);
-        };
 
         projectContainer.appendChild(entry);
     }
