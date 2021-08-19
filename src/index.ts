@@ -6,6 +6,7 @@ const projectEntryTemplate : HTMLTemplateElement = document.getElementById("proj
 const projectContainer : HTMLTemplateElement = document.getElementById("project-container") as HTMLTemplateElement;
 const introSubtitle : HTMLParagraphElement = document.getElementById("intro-container")?.getElementsByTagName("p")[0] as HTMLParagraphElement;
 const backgroundVideo: HTMLVideoElement = document.getElementById("background-video") as HTMLVideoElement;
+const projectEntryIntroAnimationWaiter = cooldownPool(10);
 
 const emptyProject : ProjectEntryData =
 {
@@ -148,6 +149,7 @@ async function fillProjectContainer()
     for (let i = 0; i < projects.length; i++)
     {
         const entry = createEntry();
+        entry.style.visibility = "hidden";
 
         if (projects[i] == emptyProject)
         {
@@ -159,13 +161,30 @@ async function fillProjectContainer()
             fillEntry(entry, projects[i]);
         }
 
+        const entryThumbnail = entry.getElementsByClassName("thumbnail")[0] as HTMLImageElement;
+        entryThumbnail.onload = async function()
+        {
+            entryThumbnail.onload = null;
+
+            await projectEntryIntroAnimationWaiter.next();
+            entry.style.visibility = "visible";
+            growIn(entry);
+        };
+
         projectContainer.appendChild(entry);
     }
+}
 
-    for (let i = 0; i < projectContainer.children.length; i++)
+// Acts as a queue of cooldowns.
+// If you run 10 things at once
+// but wish to ensure a minimum X cooldown
+// between all of them, use this method.
+async function* cooldownPool(cooldownInMiliseconds : number)
+{
+    while (true)
     {
-        growIn(projectContainer.children[i] as HTMLElement);
-        await sleep(1);
+        yield null;
+        await sleep(cooldownInMiliseconds);
     }
 }
 
