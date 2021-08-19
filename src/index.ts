@@ -81,16 +81,24 @@ const projects : ProjectEntryData[] = [
 
 backgroundVideo.style.filter = "opacity(0%)";
 
-let backgroundVideoStarted= false;
+let backgroundVideoStarted = false;
 
-backgroundVideo.oncanplaythrough = function()
+if (backgroundVideo.readyState == 4)
 {
-    if (backgroundVideoStarted)
-        return;
-
     backgroundVideoStarted = true;
     fadeIn(backgroundVideo, 500);
-};
+}
+else
+{
+    backgroundVideo.oncanplaythrough = function()
+    {
+        if (backgroundVideoStarted)
+            return;
+
+        backgroundVideoStarted = true;
+        fadeIn(backgroundVideo, 500);
+    };
+}
 
 fillProjectContainer();
 startChangingSubtitle();
