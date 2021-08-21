@@ -180,6 +180,39 @@ body {
 
 
 /**
+ * Skills
+ *
+ **/
+
+ #skill-container {
+    display: flex;
+    justify-content: center;
+    max-width: 960px;
+    margin: 10px auto auto auto;
+    background: white;
+}
+
+#skill-container > * {
+    flex-grow: 1;
+
+    display: inline-block;
+    position: relative;
+    width: 90px;
+    height: 70px;
+}
+
+#skill-container > *:nth-child(odd) {
+    background: black;
+    color: white;
+}
+
+#skill-container > *:nth-child(even) {
+    background: white;
+    color: black;
+}
+
+
+/**
  * Animations
  *
  **/
