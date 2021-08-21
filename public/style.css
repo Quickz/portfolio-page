@@ -189,7 +189,7 @@ body {
     justify-content: center;
     max-width: 960px;
     margin: 10px auto auto auto;
-    background: white;
+    background: #33333333;
 }
 
 #skill-container > * {
@@ -201,14 +201,58 @@ body {
     height: 70px;
 }
 
-#skill-container > *:nth-child(odd) {
-    background: black;
-    color: white;
+.logo:after {
+    content: '';
+    display: block;
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-#skill-container > *:nth-child(even) {
-    background: white;
-    color: black;
+.unity-logo:after {
+    background-image: url("skill-logos/unity-logo.svg");
+    width: 55px;
+    height: 55px;
+}
+
+.csharp-logo:after {
+    background-image: url("skill-logos/csharp-logo.svg");
+}
+
+.net-logo:after {
+    background-image: url("skill-logos/net-logo.svg");
+}
+
+.javascript-logo:after {
+    background-image: url("skill-logos/javascript-logo.svg");
+}
+
+.html-logo:after {
+    background-image: url("skill-logos/html-logo.svg");
+    width: 55px;
+    height: 55px;
+}
+
+.css-logo:after {
+    background-image: url("skill-logos/css-logo.svg");
+    width: 55px;
+    height: 55px;
+}
+
+.git-logo:after {
+    background-image: url("skill-logos/git-logo.svg");
+    width: 53px;
+    height: 53px;
+}
+
+.typescript-logo:after {
+    background-image: url("skill-logos/typescript-logo.svg");
 }
 
 
