@@ -32,6 +32,10 @@ body {
     font-size: 40px;
 }
 
+.margin-top-zero {
+    margin-top: 0px;
+}
+
 
 /**
  * Introduction
