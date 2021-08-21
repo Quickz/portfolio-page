@@ -201,6 +201,11 @@ body {
     height: 70px;
 }
 
+.logo:hover:after {
+    transform: translate(-50%, -59%) scale(110%);
+    transition: transform 0.2s;
+}
+
 .logo:after {
     content: '';
     display: block;
@@ -213,6 +218,8 @@ body {
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
+
+    transition: transform 0.2s;
 }
 
 .unity-logo:after {
