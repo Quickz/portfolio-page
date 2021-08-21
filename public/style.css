@@ -18,6 +18,12 @@ body {
     min-height: 100%;
 }
 
+
+/**
+ * Introduction
+ *
+ **/
+
 #intro-container {
     display: flex;
     justify-content: center;
@@ -54,6 +60,12 @@ body {
     #intro-container h1 { font-size: 35px; }
     #intro-container p { font-size: 17px; }
 }
+
+
+/**
+ * Projects
+ *
+ **/
 
 #project-container {
     display: flex;
@@ -105,7 +117,6 @@ body {
  * Social buttons
  *
  **/
-
  
  #social-container {
     display: flex;
@@ -172,7 +183,6 @@ body {
  * Animations
  *
  **/
-
 
 .play-grow-in
 {
