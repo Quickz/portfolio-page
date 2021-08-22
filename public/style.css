@@ -25,7 +25,8 @@ body {
 }
 
 .section-title {
-    width: 960px;
+    width: 100%;
+    max-width: 960px;
     margin: 25px auto 10px auto;
     color: #fff;
     text-shadow: 0px 0px 4px #111;
