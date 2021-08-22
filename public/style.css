@@ -121,13 +121,35 @@ body {
     position: absolute;
     font-size: 20px;
     color: white;
-    right: 20px;
-    bottom: 20px;
+    left: 20px;
+    top: 20px;
     text-shadow: 1px 1px 3px #111;
 
-    text-align: right;
+    text-align: left;
     width: 240px;
     pointer-events: none;
+}
+
+.project-entry .category,
+.project-entry .technologies {
+    position: absolute;
+    font-size: 14px;
+    color: white;
+    text-shadow: 1px 1px 3px #111;
+    width: 240px;
+    pointer-events: none;
+}
+
+.project-entry .category {
+    left: 20px;
+    top: 50px;
+    text-align: left;
+}
+
+.project-entry .technologies {
+    right: 20px;
+    bottom: 20px;
+    text-align: right;
 }
 
 
