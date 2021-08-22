@@ -37,6 +37,43 @@ body {
     margin-top: 0px;
 }
 
+.tooltip {
+}
+  
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0px;
+    position: absolute;
+    z-index: 1;
+    bottom: 100%;
+    left: 70%;
+    margin-left: -60px;
+    pointer-events: none;
+}
+
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 20%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: black transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+    animation: grow-in 0.2s;
+    transition-delay: 0.575s;
+    animation-delay: 0.575s;
+    visibility: visible;
+}
+
 
 /**
  * Introduction
