@@ -39,7 +39,7 @@ body {
 
 .tooltip {
 }
-  
+
 .tooltip .tooltiptext {
     visibility: hidden;
     width: 120px;
@@ -65,6 +65,29 @@ body {
     border-width: 5px;
     border-style: solid;
     border-color: black transparent transparent transparent;
+}
+
+.tooltip.move-tooltip-left .tooltiptext {
+    right: auto;
+    left: 30%;
+}
+
+.tooltip.move-tooltip-left .tooltiptext::after {
+    left: auto;
+    right: 20%;
+}
+
+@media only screen and (max-width: 719.5px)
+{
+    .tooltip.move-tooltip-left-below-720px-width .tooltiptext {
+        right: auto;
+        left: 30%;
+    }
+    
+    .tooltip.move-tooltip-left-below-720px-width .tooltiptext::after {
+        left: auto;
+        right: 20%;
+    }
 }
 
 .tooltip:hover .tooltiptext {
