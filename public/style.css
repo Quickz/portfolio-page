@@ -219,18 +219,25 @@ body {
  #skill-container {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     max-width: 960px;
     margin: auto;
     background: #33333333;
 }
 
 #skill-container > * {
+    display: flex;
     flex-grow: 1;
+    justify-content: center;
+    margin: auto;
+}
 
+#skill-container > * > * {
+    flex-grow: 1;
     display: inline-block;
     position: relative;
     width: 90px;
-    height: 70px;
+    height: 90px;
 }
 
 .logo:hover:after {
