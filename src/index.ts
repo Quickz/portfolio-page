@@ -12,7 +12,9 @@ const emptyProject : ProjectEntryData =
 {
     title: "",
     thumbnail: "",
-    url: ""
+    url: "",
+    category: "",
+    technologies: ""
 };
 
 const projects : ProjectEntryData[] = [
