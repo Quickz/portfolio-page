@@ -9,15 +9,6 @@ body {
     background: black;
 }
 
-#background-video {
-    z-index: -1;
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    min-width: 100%;
-    min-height: 100%;
-}
-
 .section-container {
     display: flex;
     max-width: 960px;
@@ -35,9 +26,6 @@ body {
 
 .margin-top-zero {
     margin-top: 0px;
-}
-
-.tooltip {
 }
 
 .tooltip .tooltiptext {
@@ -175,6 +163,7 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    display: block;
 }
 
 .project-entry .title {
