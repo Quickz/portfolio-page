@@ -85,5 +85,11 @@ export const projects : Array<ProjectEntryData | null> = [
         category: "Personal project",
         technologies: ""
     },
-    null
+    {
+        title: "Portfolio",
+        thumbnail: "thumbnails/portfolio-thumbnail.png",
+        url: "/",
+        category: "Personal project",
+        technologies: "Svelte, TypeScript, HTML, CSS"
+    },
 ];
