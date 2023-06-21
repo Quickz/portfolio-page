@@ -1,22 +1,27 @@
-# create-svelte
+# Portfolio
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+Project made using <b>Svelte</b> and <b>TypeScript</b><br>
+Live demo available at https://portfolio.quickz.dev/
 
-## Creating a project
+## Prerequisites
 
-If you're seeing this, you've probably already done this step. Congrats!
+This project requires [NodeJS](http://nodejs.org/) (version 18 or later) and [NPM](https://npmjs.org/).
+To make sure you have them available on your machine,
+try running the following command:
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
+```sh
+$ npm -v && node -v
+9.5.0
+v18.14.1
 ```
 
-## Developing
+## Installation
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+```bash
+npm install
+```
+
+## Serving the app
 
 ```bash
 npm run dev
@@ -36,3 +41,8 @@ npm run build
 You can preview the production build with `npm run preview`.
 
 > To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+
+
+# Recommendations
+
+[VS Code](https://code.visualstudio.com/) is the preferred text editor for this project.
